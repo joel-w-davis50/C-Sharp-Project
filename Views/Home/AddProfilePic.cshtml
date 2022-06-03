@@ -1,0 +1,16 @@
+@model Photo
+<h1>Add a picture from google as you Profile pic</h1>
+
+<div style="margin: 0px auto;">
+    <form style="align-items: center;" action="/ProcessAddProfilePic" method="post">
+        @* <input type="hidden" asp-for="UserId" value="@ViewBag.LoggedUser.UserId"> *@
+        <div class="form-group">
+            <label for="ProfilePic">Enter Url for Photo:</label>
+            <input asp-for="ProfilePic">  <br>
+            <span asp-validation-for="ProfilePic" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input class="btn btn-primary" type="submit" value="Update Profile Pic">
+        </div>
+    </form>
+</div>

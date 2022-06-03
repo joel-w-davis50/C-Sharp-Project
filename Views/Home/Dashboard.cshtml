@@ -1,0 +1,39 @@
+<style>
+    #Container1{
+        display:flex;
+        align-content: center;
+    }
+    #Container3{
+        align-items: center;
+    }
+    #postContainer{
+        
+    }
+</style>
+<div id="Container1">
+    <div id="Container2" style="background-color: white; height:100px; width:100px; border-radius: 50%;">
+        <div id="ProfilePic">
+            <img src="@ViewBag.LoggedUser.Photo" alt="@ViewBag.LoggedUser.Name's profile pic" style="height:100px; width:100px; object-fit: cover; border-radius: 50%;">
+        </div>
+    </div>
+    <div id="Container3" style="height:100px;">
+        <div id="LinkBar"> 
+            <a href="/ViewFriends"> View Friends </a> | <a href="/ViewAllUsers"> View Users </a> | <a href="/CreatePost"> Create New Post </a> | <a href="/ViewDirectMesseges"> Direct Message </a>
+        </div>
+    </div>
+</div>
+<div>
+    @ViewBag.LoggedUser.Name <br>
+    <a href="/AddProfilePic">Add Profile Pic</a> <br>
+    <a href="/ViewLoggedUser/@ViewBag.LoggedUser.UserId">View Your Post </a>
+</div>
+<div id="postContainer">
+    @foreach(UserPost row in ViewBag.AllPost)
+    {
+        <div style="background-color: black; width: 50vw; margin: 15px auto; padding: 10px;" id="Post">
+            <p>Posted By: @row.PostedBY.Name On @row.CreatedAt</p>
+            @row.PostContent
+        </div>
+    }
+</div>
+
