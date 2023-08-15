@@ -21,7 +21,7 @@ namespace C_Project.Controllers
         {
             _logger = logger;
             _context = context;
-        }//adding a commite 
+        }//adding some very inportant stuff
 
         public IActionResult Index()
         {
